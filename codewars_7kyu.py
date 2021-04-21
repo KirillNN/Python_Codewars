@@ -94,9 +94,51 @@ def new_avg(arr, newavg):
         raise Exception('Error expected')
 
 
-# удаление нескольких символов в строке
-def disemvowel(string):
-    return ''.join(c for c in string if c.lower() not in 'aeiou')
+# The vowels "eiou" are disallowed as are the slash "/", asterisk "*", and period "." characters.
+def davasaan(x, c=0):
+    return davasaan(x=x - 10, c=c + 1) if x > 9 else c
 
 
 print(disemvowel('aeiou'))
+# print(davasaan(11))
+
+def is_narcissistic(i):
+    res = sum(map(lambda x: int(x) ** len(str(i)), str(i)))
+    return sum(map(lambda x: int(x) ** len(str(i)), str(i))) == i
+
+
+# is_narcissistic(153)
+
+def pyramid(balls, lvl=0):
+    balls -= lvl + 1
+    if balls >= 0:
+        lvl += 1
+        return pyramid(balls, lvl)
+    else:
+        return lvl
+
+
+# print(pyramid(6))
+
+
+def word_to_bin(word):
+    return [f'{ord(x):08b}' for x in word]
+
+
+# print(word_to_bin('man'))
+list1 = [
+    {'firstName': 'Noah', 'lastName': 'M.', 'country': 'Switzerland', 'continent': 'Europe', 'age': 19,
+     'language': 'JavaScript'},
+    {'firstName': 'Maia', 'lastName': 'S.', 'country': 'Tahiti', 'continent': 'Oceania', 'age': 28,
+     'language': 'JavaScript'},
+    {'firstName': 'Shufen', 'lastName': 'L.', 'country': 'Taiwan', 'continent': 'Asia', 'age': 35, 'language': 'HTML'},
+    {'firstName': 'Sumayah', 'lastName': 'M.', 'country': 'Tajikistan', 'continent': 'Asia', 'age': 30,
+     'language': 'CSS'}
+]
+
+
+def count_developers(lst):
+    x=lst.count({})
+
+
+print(count_developers(list1))
