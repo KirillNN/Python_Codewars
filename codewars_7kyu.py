@@ -125,19 +125,23 @@ def word_to_bin(word):
 
 
 # print(word_to_bin('man'))
-list1 = [
-    {'firstName': 'Noah', 'lastName': 'M.', 'country': 'Switzerland', 'continent': 'Europe', 'age': 19,
-     'language': 'JavaScript'},
-    {'firstName': 'Maia', 'lastName': 'S.', 'country': 'Tahiti', 'continent': 'Oceania', 'age': 28,
-     'language': 'JavaScript'},
-    {'firstName': 'Shufen', 'lastName': 'L.', 'country': 'Taiwan', 'continent': 'Asia', 'age': 35, 'language': 'HTML'},
-    {'firstName': 'Sumayah', 'lastName': 'M.', 'country': 'Tajikistan', 'continent': 'Asia', 'age': 30,
-     'language': 'CSS'}
-]
+list1 = [{'firstName': 'Noah', 'lastName': 'M.', 'country': 'Switzerland', 'continent': 'Europe', 'age': 19,
+          'language': 'JavaScript'},
+         {'firstName': 'Maia', 'lastName': 'S.', 'country': 'Tahiti', 'continent': 'Oceania', 'age': 28,
+          'language': 'JavaScript'},
+         {'firstName': 'Shufen', 'lastName': 'L.', 'country': 'Taiwan', 'continent': 'Asia', 'age': 35,
+          'language': 'HTML'},
+         {'firstName': 'Sumayah', 'lastName': 'M.', 'country': 'Tajikistan', 'continent': 'Asia', 'age': 30,
+          'language': 'CSS'}]
 
 
 def count_developers(lst):
-    x=lst.count({})
+    count = 0
+    for item in lst:
+        if item['language'] == 'JavaScript' and item['continent'] == 'Europe':
+            count += 1
+    return count
+    # return sum(x["language"] == "JavaScript" and x["continent"] == "Europe" for x in lst)
 
 
 print(count_developers(list1))
