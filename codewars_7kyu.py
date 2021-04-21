@@ -99,7 +99,6 @@ def davasaan(x, c=0):
     return davasaan(x=x - 10, c=c + 1) if x > 9 else c
 
 
-print(disemvowel('aeiou'))
 # print(davasaan(11))
 
 def is_narcissistic(i):
