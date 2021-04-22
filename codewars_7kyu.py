@@ -144,4 +144,12 @@ def count_developers(lst):
     # return sum(x["language"] == "JavaScript" and x["continent"] == "Europe" for x in lst)
 
 
-print(count_developers(list1))
+# print(count_developers(list1))
+
+
+# Evens times last
+def even_last(numbers):
+    return sum(numbers[::2]) * numbers[-1] if numbers != [] else 0
+
+
+# print(even_last([-38, 64, -17, 11, 83, 84, 69, 64, -47, -35]))  # -1750
