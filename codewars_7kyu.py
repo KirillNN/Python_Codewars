@@ -153,3 +153,13 @@ def even_last(numbers):
 
 
 # print(even_last([-38, 64, -17, 11, 83, 84, 69, 64, -47, -35]))  # -1750
+
+num_grid = [[1, 2, 3, 4], [5, 6, 7, 8, 9], [0, 2, 4]]
+char_grid = [['h', 'E', 'l', 'l', 'O'], ['w', 'O', 'r', 'L', 'd']]
+
+
+def grid_map(inp, op):
+    return exec(op(inp))
+
+
+print(grid_map(char_grid, lambda x: x.upper()))
