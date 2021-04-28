@@ -1,3 +1,6 @@
+import re
+
+
 def tap_code_translation(text):
     dots = []
     for c in text:
@@ -73,8 +76,6 @@ def reverse_number(n):
 
 
 # print(reverse_number(-12423))
-
-import re
 
 
 def reverse_letter(string):
@@ -162,4 +163,15 @@ def grid_map(inp, op):
     return exec(op(inp))
 
 
-print(grid_map(char_grid, lambda x: x.upper()))
+# print(grid_map(char_grid, lambda x: x.upper()))
+
+# Назовем строку классной, если она образована только латинскими буквами и нет двух строчных
+# и двух прописных букв на соседних позициях. Учитывая строку, проверьте, классная ли она.
+# match - Этот метод ищет по заданному шаблону в начале строки!!!!!!!!!!!!!!!!!!
+# по этому используем search
+def cool_string(s):
+    # x = re.match('[^a-zA-Z]|[a-z]{2}|[A-Z]{2}', s)
+    # x = re.match('[a-z]{2}', s)
+    return re.search('[^a-zA-Z]|[a-z]{2}|[A-Z]{2}', s) is None
+
+print(cool_string("lBC"))
