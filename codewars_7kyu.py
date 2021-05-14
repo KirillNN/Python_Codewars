@@ -193,3 +193,12 @@ def shorter_reverse_longer(a, b):
 
 def not_visible_cubes(n):
     return max(0, (n - 2) ** 3)
+
+
+def chess_knight(cell):
+    move = [[1, 2], [2, 1], [2, -1], [1, -2], [-1, -2], [-2, -1], [-2, 1], [-1, 2]]
+    for x in mvoe
+    return ord(cell[0]), chr(ord(cell[0]))
+
+
+print(chess_knight('a3'))
