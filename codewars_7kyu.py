@@ -196,9 +196,14 @@ def not_visible_cubes(n):
 
 
 def chess_knight(cell):
-    move = [[1, 2], [2, 1], [2, -1], [1, -2], [-1, -2], [-2, -1], [-2, 1], [-1, 2]]
-    for x in mvoe
-    return ord(cell[0]), chr(ord(cell[0]))
+    result = 0
+    moves = [[-2, -1], [-2, 1], [-1, -2], [-1, 2], [1, -2], [1, 2], [2, -1], [2, 1]]
+    for move in moves:
+        new_x = chr(ord(cell[0]) + move[0])
+        new_y = int(cell[1]) + move[1]
+        if new_x in 'abcdefgh' and 1 <= new_y <= 8:
+            result += 1
+    return result
 
 
-print(chess_knight('a3'))
+print(chess_knight('h3'))
