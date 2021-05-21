@@ -206,7 +206,7 @@ def chess_knight(cell):
     return result
 
 
-print(chess_knight('h3'))
+# print(chess_knight('h3'))
 
 
 # рекурсия ниже
@@ -223,3 +223,46 @@ print(chess_knight('h3'))
 
 def last_survivor(letters, coords):
     return letters if not coords else last_survivor(letters[:coords[0]] + letters[coords[0] + 1:], coords[1:])
+
+
+def is_sator_square(tablet):
+    dict_word_ltr = []
+    dict_word_rtl = []
+    dict_word_ttb = []
+    dict_word_btt = []
+    len_ = len(tablet)
+
+    for item in tablet:
+        word = ''.join(item)
+        dict_word_ltr.append(word)
+    for x in range(len_ - 1, -1, -1):
+        word = ''.join(tablet[x][::-1])
+        dict_word_rtl.append(word)
+    for x in range(len_):
+        word = ''
+        for y in range(len_):
+            word += tablet[y][x]
+        dict_word_ttb.append(word)
+    for x in range(len_ - 1, -1, -1):
+        word = ''
+        for y in range(len_ - 1, -1, -1):
+            word += tablet[y][x]
+        dict_word_btt.append(word)
+
+    return dict_word_rtl == dict_word_ltr == dict_word_ttb == dict_word_btt
+
+
+print(is_sator_square([
+    ['S', 'A', 'T', 'O', 'R'],
+    ['A', 'R', 'E', 'P', 'O'],
+    ['T', 'E', 'N', 'E', 'T'],
+    ['O', 'P', 'E', 'R', 'A'],
+    ['R', 'O', 'T', 'A', 'S']
+]))
+
+print(is_sator_square([
+    ['B', 'A', 'T', 'S'],
+    ['#', 'B', 'U', 'T'],
+    ['T', 'U', 'B', '#'],
+    ['S', 'T', 'A', 'B']
+]))
