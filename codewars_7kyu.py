@@ -207,3 +207,19 @@ def chess_knight(cell):
 
 
 print(chess_knight('h3'))
+
+
+# рекурсия ниже
+# def last_survivor(letters, coords):
+#     if not coords:
+#         return letters
+#     letters = letters[:coords[0]]+letters[coords[0]+1:]
+#     return last_survivor(letters, coords[1:])
+#
+# print(last_survivor('abc', [1, 1]), 'a')
+# print(last_survivor('kbc', [0, 1]), 'b')
+# print(last_survivor('zbk', [2, 1]), 'z')
+
+
+def last_survivor(letters, coords):
+    return letters if not coords else last_survivor(letters[:coords[0]] + letters[coords[0] + 1:], coords[1:])
