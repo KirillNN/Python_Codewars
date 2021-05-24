@@ -252,17 +252,22 @@ def is_sator_square(tablet):
     return dict_word_rtl == dict_word_ltr == dict_word_ttb == dict_word_btt
 
 
-print(is_sator_square([
-    ['S', 'A', 'T', 'O', 'R'],
-    ['A', 'R', 'E', 'P', 'O'],
-    ['T', 'E', 'N', 'E', 'T'],
-    ['O', 'P', 'E', 'R', 'A'],
-    ['R', 'O', 'T', 'A', 'S']
-]))
+# print(is_sator_square([
+#     ['S', 'A', 'T', 'O', 'R'],
+#     ['A', 'R', 'E', 'P', 'O'],
+#     ['T', 'E', 'N', 'E', 'T'],
+#     ['O', 'P', 'E', 'R', 'A'],
+#     ['R', 'O', 'T', 'A', 'S']
+# ]))
+#
+# print(is_sator_square([
+#     ['B', 'A', 'T', 'S'],
+#     ['#', 'B', 'U', 'T'],
+#     ['T', 'U', 'B', '#'],
+#     ['S', 'T', 'A', 'B']
+# ]))
 
-print(is_sator_square([
-    ['B', 'A', 'T', 'S'],
-    ['#', 'B', 'U', 'T'],
-    ['T', 'U', 'B', '#'],
-    ['S', 'T', 'A', 'B']
-]))
+
+# print(sorted([66, 55, 100, 68, 46, -82, 12, 72, 12, 38]))
+# make_valley(a) --> [100, 68, 55, 38, 12, *-82*, 12, 46, 66, 72]
+# https://www.codewars.com/kata/56e3cd1d93c3d940e50006a4/train/python
