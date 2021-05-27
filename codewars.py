@@ -894,27 +894,27 @@ def repeat_str(repeat, string):
 
 # print(rooms)
 
-# base = {'english': 'Welcome',
-#         'czech': 'Vitejte',
-#         'danish': 'Velkomst',
-#         'dutch': 'Welkom',
-#         'estonian': 'Tere tulemast',
-#         'finnish': 'Tervetuloa',
-#         'flemish': 'Welgekomen',
-#         'french': 'Bienvenue',
-#         'german': 'Willkommen',
-#         'irish': 'Failte',
-#         'italian': 'Benvenuto',
-#         'latvian': 'Gaidits',
-#         'lithuanian': 'Laukiamas',
-#         'polish': 'Witamy',
-#         'spanish': 'Bienvenido',
-#         'swedish': 'Valkommen',
-#         'welsh': 'Croeso',
-#         'IP_ADDRESS_INVALID': 'Welcome',
-#         'IP_ADDRESS_NOT_FOUND': 'Welcome',
-#         'IP_ADDRESS_REQUIRED': 'Welcome'
-#         }
+base = {'english': 'Welcome',
+        'czech': 'Vitejte',
+        'danish': 'Velkomst',
+        'dutch': 'Welkom',
+        'estonian': 'Tere tulemast',
+        'finnish': 'Tervetuloa',
+        'flemish': 'Welgekomen',
+        'french': 'Bienvenue',
+        'german': 'Willkommen',
+        'irish': 'Failte',
+        'italian': 'Benvenuto',
+        'latvian': 'Gaidits',
+        'lithuanian': 'Laukiamas',
+        'polish': 'Witamy',
+        'spanish': 'Bienvenido',
+        'swedish': 'Valkommen',
+        'welsh': 'Croeso',
+        'IP_ADDRESS_INVALID': 'Welcome',
+        'IP_ADDRESS_NOT_FOUND': 'Welcome',
+        'IP_ADDRESS_REQUIRED': 'Welcome'
+        }
 
 
 def greet(language):
@@ -1971,7 +1971,7 @@ def eval_object(v):
             "**": v['a'] ** v['b']}.get(v['operation'], 1)
 
 
-print(eval_object({'a': 3, 'b': 1, 'operation': "+"}))
+# print(eval_object({'a': 3, 'b': 1, 'operation': "+"}))
 
 
 def each_cons(lst, n):
@@ -1980,3 +1980,29 @@ def each_cons(lst, n):
         result.append(lst[i:i + n])
     return result
     # return [lst[i:i+n] for i in range(len(lst) - n + 1)]
+
+
+def array_of_tiers(data):
+    result = [data]
+    while data > 9:
+        data //= 10
+        result.append(data)
+    return result[::-1]
+
+
+# Пример:
+# array_of_tiers(420) ==> [4, 42, 420]
+# array_of_tiers(2021) ==> [2, 20, 202, 2021]
+# array_of_tiers(80200) == [8, 80, 802, 8020, 80200]
+
+# print(array_of_tiers(420))
+# print(array_of_tiers(2021))
+# print(array_of_tiers(80200))
+
+
+
+def min_max_rotate():
+    result = input("Введите массив: ")
+    return result.split()
+
+print(min_max_rotate())
