@@ -193,3 +193,81 @@ def shorter_reverse_longer(a, b):
 
 def not_visible_cubes(n):
     return max(0, (n - 2) ** 3)
+
+
+def chess_knight(cell):
+    result = 0
+    moves = [[-2, -1], [-2, 1], [-1, -2], [-1, 2], [1, -2], [1, 2], [2, -1], [2, 1]]
+    for move in moves:
+        new_x = chr(ord(cell[0]) + move[0])
+        new_y = int(cell[1]) + move[1]
+        if new_x in 'abcdefgh' and 1 <= new_y <= 8:
+            result += 1
+    return result
+
+
+# print(chess_knight('h3'))
+
+
+# рекурсия ниже
+# def last_survivor(letters, coords):
+#     if not coords:
+#         return letters
+#     letters = letters[:coords[0]]+letters[coords[0]+1:]
+#     return last_survivor(letters, coords[1:])
+#
+# print(last_survivor('abc', [1, 1]), 'a')
+# print(last_survivor('kbc', [0, 1]), 'b')
+# print(last_survivor('zbk', [2, 1]), 'z')
+
+
+def last_survivor(letters, coords):
+    return letters if not coords else last_survivor(letters[:coords[0]] + letters[coords[0] + 1:], coords[1:])
+
+
+def is_sator_square(tablet):
+    dict_word_ltr = []
+    dict_word_rtl = []
+    dict_word_ttb = []
+    dict_word_btt = []
+    len_ = len(tablet)
+
+    for item in tablet:
+        word = ''.join(item)
+        dict_word_ltr.append(word)
+    for x in range(len_ - 1, -1, -1):
+        word = ''.join(tablet[x][::-1])
+        dict_word_rtl.append(word)
+    for x in range(len_):
+        word = ''
+        for y in range(len_):
+            word += tablet[y][x]
+        dict_word_ttb.append(word)
+    for x in range(len_ - 1, -1, -1):
+        word = ''
+        for y in range(len_ - 1, -1, -1):
+            word += tablet[y][x]
+        dict_word_btt.append(word)
+
+    return dict_word_rtl == dict_word_ltr == dict_word_ttb == dict_word_btt
+
+
+# print(is_sator_square([
+#     ['S', 'A', 'T', 'O', 'R'],
+#     ['A', 'R', 'E', 'P', 'O'],
+#     ['T', 'E', 'N', 'E', 'T'],
+#     ['O', 'P', 'E', 'R', 'A'],
+#     ['R', 'O', 'T', 'A', 'S']
+# ]))
+#
+# print(is_sator_square([
+#     ['B', 'A', 'T', 'S'],
+#     ['#', 'B', 'U', 'T'],
+#     ['T', 'U', 'B', '#'],
+#     ['S', 'T', 'A', 'B']
+# ]))
+
+
+# print(sorted([66, 55, 100, 68, 46, -82, 12, 72, 12, 38]))
+# make_valley(a) --> [100, 68, 55, 38, 12, *-82*, 12, 46, 66, 72]
+# https://www.codewars.com/kata/56e3cd1d93c3d940e50006a4/train/python
