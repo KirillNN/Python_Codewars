@@ -271,3 +271,21 @@ def is_sator_square(tablet):
 # print(sorted([66, 55, 100, 68, 46, -82, 12, 72, 12, 38]))
 # make_valley(a) --> [100, 68, 55, 38, 12, *-82*, 12, 46, 66, 72]
 # https://www.codewars.com/kata/56e3cd1d93c3d940e50006a4/train/python
+
+def find_squares(num):
+    return '-'.join([str((num // 2 + 1) ** 2), str((num // 2) ** 2)])
+
+
+# print(find_squares(7))
+
+def t_area(t_str):
+    # print(t_str.split('\n'))
+    # print(t_str.split('\n')[-2])
+    # print(t_str.split('\n')[-2].split())
+    # print(len(t_str.split('\n')[-2].split()))
+    # print(len(t_str.split('\n')[-2].split())-1)
+    # print((len(t_str.split('\n')[-2].split())-1)**2/2)
+    return (len(t_str.split('\n')[-2].split()) - 1) ** 2 / 2
+
+
+assert t_area('\n.\n. .\n. . .\n. . . .\n. . . . .\n. . . . . .\n. . . . . . .\n. . . . . . . .\n. . . . . . . . .\n') == 32.0
