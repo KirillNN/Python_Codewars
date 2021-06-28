@@ -288,4 +288,18 @@ def t_area(t_str):
     return (len(t_str.split('\n')[-2].split()) - 1) ** 2 / 2
 
 
-assert t_area('\n.\n. .\n. . .\n. . . .\n. . . . .\n. . . . . .\n. . . . . . .\n. . . . . . . .\n. . . . . . . . .\n') == 32.0
+assert t_area(
+    '\n.\n. .\n. . .\n. . . .\n. . . . .\n. . . . . .\n. . . . . . .\n. . . . . . . .\n. . . . . . . . .\n') == 32.0
+
+
+# https://www.codewars.com/kata/5f0ed36164f2bc00283aed07/train/python
+def over_the_road(address, n):
+    pass
+
+
+assert over_the_road(1, 3) == 6
+assert over_the_road(3, 3) == 4
+assert over_the_road(2, 3) == 5
+assert over_the_road(3, 5) == 8
+assert over_the_road(7, 11) == 16
+assert over_the_road(23633656673, 310027696726) == 596421736780
