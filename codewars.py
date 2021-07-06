@@ -1,3 +1,4 @@
+import time
 import datetime
 import re
 import math
@@ -2010,47 +2011,47 @@ def min_max_rotate():
 # print(min_max_rotate())
 
 
-def circle_diameter(sides, side_length):
-    alpha = 360 / sides / 2
-    a = side_length / 2
-    x = tan(alpha * pi / 180)
-    result = a / x * 2
-    return round(result, 3)
+# def circle_diameter(sides, side_length):
+#     alpha = 360 / sides / 2
+#     a = side_length / 2
+#     x = tan(alpha * pi / 180)
+#     result = a / x * 2
+#     return round(result, 3)
 
 
 # circle_diameter = lambda sides, side_length: round(side_length / tan((180 / sides) * pi / 180), 3)
 
-# def circle_diameter(sides, side_length):
-#     alpha = 360 / sides / 2
-#     a = side_length / 2
-#     n = 2  # Accuracy calculation tan(alpha) Must be no less 4 for tests passed
-#     tan_x = circle_diameter_sin(alpha, n) / circle_diameter_cos(alpha, n)
-#     result = a / tan_x * 2
-#     return round(result, 3)
-#
-#
-# def circle_diameter_sin(angle, n):  # 0.3826834324 for 22.5
-#     x = angle * 3.14159265358979323846 / 180  # Angle in radians
-#     result = 0
-#     for n in range(0, n):
-#         result += ((-1) ** n * x ** (2 * n + 1)) / circle_diameter_factorial(2 * n + 1)
-#     return result
-#
-#
-# def circle_diameter_cos(angle, n):  # 0.9238795325 for 22.5
-#     x = angle * 3.14159265358979323846 / 180  # Angle in radians
-#     result = 0
-#     for n in range(0, n):
-#         result += ((-1) ** n * x ** (2 * n)) / circle_diameter_factorial(2 * n)
-#     return result
-#
-#
-# def circle_diameter_factorial(n):
-#     if n == 0:
-#         return 1
-#     return circle_diameter_factorial(n - 1) * n
+def circle_diameter(sides, side_length):
+    alpha = 360 / sides / 2
+    a = side_length / 2
+    n = 4  # Accuracy calculation tan(alpha) Must be no less 4 for tests passed
+    tan_x = circle_diameter_sin(alpha, n) / circle_diameter_cos(alpha, n)
+    result = a / tan_x * 2
+    return round(result, 3)
 
 
+def circle_diameter_sin(angle, n):  # 0.3826834324 for 22.5
+    x = angle * 3.14159265358979323846 / 180  # Angle in radians
+    result = 0
+    for n in range(0, n):
+        result += ((-1) ** n * x ** (2 * n + 1)) / circle_diameter_factorial(2 * n + 1)
+    return result
+
+
+def circle_diameter_cos(angle, n):  # 0.9238795325 for 22.5
+    x = angle * 3.14159265358979323846 / 180  # Angle in radians
+    result = 0
+    for n in range(0, n):
+        result += ((-1) ** n * x ** (2 * n)) / circle_diameter_factorial(2 * n)
+    return result
+
+
+def circle_diameter_factorial(n):
+    if n == 0:
+        return 1
+    return circle_diameter_factorial(n - 1) * n
+
+start_time = time.time()
 print(circle_diameter(8, 9))
-
-
+end_time = time.time()
+print('Time consumed {} secs'.format(end_time - start_time))

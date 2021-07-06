@@ -294,12 +294,43 @@ assert t_area(
 
 # https://www.codewars.com/kata/5f0ed36164f2bc00283aed07/train/python
 def over_the_road(address, n):
-    pass
+    max_addr = n * 2
+    in_ser = address // 2
+    if address % 2 != 0:
+        result = max_addr - in_ser * 2
+    else:
+        result = max_addr - 1 - (in_ser - 1) * 2
+    return result
 
 
 assert over_the_road(1, 3) == 6
 assert over_the_road(3, 3) == 4
 assert over_the_road(2, 3) == 5
+assert over_the_road(4, 3) == 3
 assert over_the_road(3, 5) == 8
 assert over_the_road(7, 11) == 16
 assert over_the_road(23633656673, 310027696726) == 596421736780
+
+
+# https://www.codewars.com/kata/51fd6bc82bc150b28e0000ce/train/python
+def no_odds(values):
+    return [x for x in values if x % 2 == 0]
+
+
+assert no_odds([0, 1, 2, 3]) == [0, 2]
+
+
+# групповая замена нескольких символов в строке
+def DNA_strand(dna):
+    return dna.translate(str.maketrans("ATCG", "TAGC"))
+
+
+assert DNA_strand("ATTGC") == "TAACG"
+
+# https://www.codewars.com/kata/60dda5a66c4cf90026256b75/train/python
+# функция в функции
+def some_but_not_all(seq, pred):
+    return any(map(pred, seq)) and not all(map(pred, seq))
+
+
+print(some_but_not_all('abcdefg&%$', str.isalpha))
