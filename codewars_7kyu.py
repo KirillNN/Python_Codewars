@@ -355,3 +355,20 @@ assert task('Tuesday', 6,
             1) == 'It is Tuesday today, John, you have to work, you must spray 6 trees and you need 6 dollars to buy liquid'
 assert task('Thursday', 5,
             3) == 'It is Thursday today, Michael, you have to work, you must spray 5 trees and you need 15 dollars to buy liquid'
+
+
+# https://www.codewars.com/kata/562f91ff6a8b77dfe900006e/train/python
+def movie(card, ticket, perc):
+    count = 1
+    sys_a = ticket
+    sys_b = card + ticket * perc
+    while True:
+        if int(sys_b) + 1 < sys_a:
+            return count
+        else:
+            count += 1
+            sys_a = ticket * count
+            sys_b += ticket * perc ** count
+
+
+print(movie(983964, 3, 0.25))
