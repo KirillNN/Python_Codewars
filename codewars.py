@@ -2051,7 +2051,25 @@ def circle_diameter_factorial(n):
         return 1
     return circle_diameter_factorial(n - 1) * n
 
+
 start_time = time.time()
 print(circle_diameter(8, 9))
 end_time = time.time()
 print('Time consumed {} secs'.format(end_time - start_time))
+
+
+# https://www.codewars.com/kata/566dc566f6ea9a14b500007b/train/python
+def kata_13_december(lst):
+    # Fix this code
+    lst1 = []
+    for i in range(len(lst)):
+        if lst[i] % 2 != 0:
+            lst1.append(lst[i])
+    return lst1
+
+# def kata_13_december(lst):
+#     return [x for x in lst if x%2]
+
+
+assert kata_13_december([1, 2, 2, 2, 4, 3, 4, 5, 6, 7]) == [1, 3, 5, 7]
+assert kata_13_december([1, 2, 2, 2, 4, 3, 4]) == [1, 3]
