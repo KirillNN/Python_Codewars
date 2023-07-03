@@ -8,9 +8,10 @@ def get_free_urinals(urinals, counter=0, start=True):
     if start:
         urinals = list('0' + urinals + '0')
     for i, v in enumerate(urinals[1:-1]):
-        if urinals[i - 1] == urinals[i] == urinals[i + 1] == '0':
-            urinals[i+1] = '1'
-            return get_free_urinals(urinals, counter+1, False)
+        if v == '0':
+            if urinals[i] == '0' and urinals[i + 2] == '0':
+                urinals[i + 1] = '1'
+                return get_free_urinals(urinals, counter + 1, False)
     return counter
 
 
