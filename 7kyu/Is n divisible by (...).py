@@ -15,8 +15,8 @@
 #     result = all([a % b == 0 for a, b in pairs])
 #     return result
 #
-# def is_divisible(n, *args):
-#     return all(not n % i for i in args)
+def is_divisible(n, *args):
+    return all(not n % i for i in args)
 #
 #
 # def is_divisible(n, *args):
@@ -26,8 +26,8 @@
 # is_divisible(100, 5, 4, 10, 25, 20)
 
 
-current_list = [[10, 6, 9], [0, 14, 16, 80], [8, 12, 30, 44]]
-sorted_list = lambda x: (sorted(i) for i in x)
-second_largest = lambda x, func: [y[len(y) - 2] for y in func(x)]
-result = second_largest(current_list, sorted_list)
-print(result)
+# current_list = [[10, 6, 9], [0, 14, 16, 80], [8, 12, 30, 44]]
+# sorted_list = lambda x: (sorted(i) for i in x)
+# second_largest = lambda x, func: [y[len(y) - 2] for y in func(x)]
+# result = second_largest(current_list, sorted_list)
+# print(result)
