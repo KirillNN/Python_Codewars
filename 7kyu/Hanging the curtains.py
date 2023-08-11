@@ -3,7 +3,7 @@ def number_of_hooks(length, max_hook_dist):
     mult = 0
     while length > max_hook_dist:
         result += 2 ** mult
-        mult *= 2
+        mult += 1
         length /= 2
     return result
 
