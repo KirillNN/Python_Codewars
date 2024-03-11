@@ -3,12 +3,19 @@ def fibonacci(seq, n):
 
 
 def pisano(n):
-    seq_fibonacci = [0, 1, 1]
-    seg_pisano = [0, 1, 1]
-    for i in range(3, 20):
-        seq_fibonacci.append(fibonacci(seq_fibonacci, i))
-        seg_pisano.append(seq_fibonacci[i] % n)
-    return seg_pisano
+    seq_fibonacci = [0, 1]
+    seg_pisano = [0, 1]
+
+    for i in range(2, n * 6 + 2):  # Период Пизано обязательно меньше n * 6
+        seq_fibonacci.append(seq_fibonacci[i - 1] + seq_fibonacci[i - 2])
+        seq_fibonacci[i] %= n
+
+        if seq_fibonacci[-2:] == [0, 1]:  # Находим период Пизано
+            return len(seg_pisano) - 1
+
+        seg_pisano.append(seq_fibonacci[i])
+
+    return None
 
 
-print(pisano(3))
+print(pisano(5))
