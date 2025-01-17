@@ -19,3 +19,5 @@ def decode(s):
     return s
 
 
+x = 'flxVC5WE94UA1OoD70MkvRuPqHabdhpF,82QsLirJejtNmzZKgnB3SwTyXG ?.6YIc'
+print(len(x))
